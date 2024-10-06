@@ -1,0 +1,13 @@
+services:
+
+  kafka:
+    image: apache/kafka:3.8.0-rc3
+    hostname: kafka
+    container_name: kafka
+    ports:
+      - 9092:9092
+    env_file:
+      - kafka.env
+    volumes:
+      - '~/kafka:/tmp/kraft-combined-logs'
+    restart: always

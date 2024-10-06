@@ -1,0 +1,12 @@
+${USER}-neo4j:
+    image: neo4j:5.23.0-community-bullseye
+    hostname: ${USER}-neo4j
+    container_name: ${USER}-neo4j
+    ports:
+      - 7688:7688
+      - 7475:7475
+    env_file:
+      - neo4j.env
+    volumes:
+      - $HOME/neo4j:/data
+    restart: always

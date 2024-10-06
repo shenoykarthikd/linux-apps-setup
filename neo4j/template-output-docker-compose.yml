@@ -1,0 +1,12 @@
+john_smith-neo4j:
+    image: neo4j:5.23.0-community-bullseye
+    hostname: john_smith-neo4j
+    container_name: john_smith-neo4j
+    ports:
+      - 7687:7687
+      - 7474:7474
+    env_file:
+      - neo4j.env
+    volumes:
+      - $HOME/neo4j:/data
+    restart: always
